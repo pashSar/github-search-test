@@ -1,0 +1,38 @@
+
+.wrapper {
+
+    width: 80vw;
+    margin: 40px auto;
+    padding: 0 0px 0 2rem;
+}
+
+
+.repoItemImgBig{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+.characteristics{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.characteristics p {
+    display: block;
+    margin: 16px 0 0 0;
+    text-align: start;
+}
+
+.bottomPart {
+    padding: 0;
+    display: flex;
+    justify-content: end;
+}
+.bottomPart figure{
+    display: flex;
+    margin: 0;
+    align-items: center;
+    gap: 1rem;
+}

@@ -40,7 +40,7 @@ class SearchRepos {
                     method: 'GET',
                     headers: {
                         'Accept': 'application/vnd.github.v3+json',
-                        'Authorization': 'token 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',
+                        'Authorization': 'token your token',
                     }
                 })
                 .then(response => response.json())

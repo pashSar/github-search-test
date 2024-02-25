@@ -11,27 +11,27 @@ const AddingInfo = observer (() => {
 
     let webSite = '';
     if(!item.homepage) {webSite = ' ---нет---'} else {
-        webSite = <strong>{item.homepage}</strong> 
+        webSite = item.homepage;
     }
 
 
 
     return (
         <article className={clAdd.wrapper}>
-            <h1>{item.full_name}</h1>
+            <h1 className={clAdd.head}>{item?.name}</h1>
             <figure>
                 <img className={clAdd.repoItemImgBig} src={item?.owner?.avatar_url} alt="here were a logotype" />
-                <figcaption><h4>{item?.name}</h4></figcaption>
+                <figcaption><h4>{item.full_name}</h4></figcaption>
             </figure>
 
             <div className={clAdd.characteristics}>
-                <p>Описание: {item.description}</p>
-                <p>url: <a href={item.html_url} target='blank'>{item.html_url}</a></p>
+                <p>Описание: <span>{item.description}</span></p>
+                <p className={clAdd.linkWithDesc}>Url: <a href={item.html_url} target='blank'>{item.html_url}</a></p>
                 <p>Язык: <strong>{item.language}</strong></p>
                 <p className={classes.repoItemText}>Число старов: <strong>{item.stargazers_count}</strong></p>
                 <p className={classes.repoItemText}>Число форков: <strong>{item.forks_count}</strong></p>
                 <p className={classes.repoItemText}>Число наблюдателей: <strong>{item.watchers}</strong></p>        
-                <p>Сайт: 
+                <p className={clAdd.linkWithDesc}>Сайт: 
                 {item.homepage 
                     ? <a href={item.homepage} target='blank'> {webSite}</a>
                     : <span>{webSite}</span>

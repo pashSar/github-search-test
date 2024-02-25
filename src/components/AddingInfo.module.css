@@ -1,16 +1,27 @@
 
 .wrapper {
-
     width: 80vw;
-    margin: 40px auto;
-    padding: 0 0px 0 2rem;
+    margin: 2.5rem auto;
+    padding: 0 2rem 0 2rem;
 }
 
+.wrapper figure figcaption h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.head{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5rem;
+}
 
 .repoItemImgBig{
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
+    margin: 1rem auto;
 }
 
 .characteristics{
@@ -20,12 +31,29 @@
 }
 
 .characteristics p {
-    display: block;
-    margin: 16px 0 0 0;
+    display: flex;
+    margin: 1rem 0 0 0;
     text-align: start;
+    align-items: flex-start;
+    font-size: 1rem;
 }
 
+.characteristics p a, .characteristics p span,
+.characteristics p strong {
+    margin-left: 0.5rem;
+} 
+.characteristics p a {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.linkWithDesc{
+    width: 100%;
+}
 .bottomPart {
+    margin-top: 1rem;
     padding: 0;
     display: flex;
     justify-content: flex-end;

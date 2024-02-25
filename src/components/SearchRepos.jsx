@@ -8,11 +8,8 @@ import { throttle } from "../helpers/throttle";
 
 const SearchRepos = observer(() => {
 
-
-
     const throttleFetchListOfRepo = throttle(() => searchRepos.fetchListOfRepo(inputQuery.inputQuery), 1000)
-
-
+    
     useEffect(() => {throttleFetchListOfRepo()}, [inputQuery.inputQuery])
 
     return (

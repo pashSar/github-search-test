@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import cl from './ListOfRepo.module.css';
+import cl from './UI/card/ItemRepo.module.css';
 import additionalInfo from '../store/additionalInfo';
 import { IconFavorite } from './UI/icons/IconFavorite';
 import { IconFavoriteChecked } from './UI/icons/IconFavoriteChecked';
@@ -7,6 +7,7 @@ import favoritesRepos from '../store/favoritesRepos';
 import { observer } from 'mobx-react-lite';
 import iconAddInstance from '../store/iconAdd';
 import searchReposInstance from '../store/searchRepos';
+import clBtn from './UI/buttons/BtnCopy.module.css'
 
 
 const ItemRepo = observer (({item}) => {
@@ -49,7 +50,7 @@ const ItemRepo = observer (({item}) => {
             </div>
             
             <div className={cl.bottomPartItem}>
-                <Link to={`${item.id}`} onClick={() => additionalInfo.defineItem(item)}> Подробнее...</Link>
+                <Link className={clBtn.btnFlat} to={`${item.id}`} onClick={() => additionalInfo.defineItem(item)}> Подробнее...</Link>
             </div>
             
                

@@ -1,12 +1,15 @@
 import { makeAutoObservable } from "mobx"
 
-const url = process.env.REACT_APP_DB_URL;
 
+const url = 'https://api.github.com/search/repositories';
+const token = process.env.REACT_APP_DB_URL;
+
+const cache =  new Map();
 
 class SearchRepos {
 
     repos = [];
-
+    
     constructor() {
         makeAutoObservable(this)
     }
@@ -14,7 +17,6 @@ class SearchRepos {
         this.repos = this.repos.filter(repo => repo.id !== id)
     }
     removeFromFavorites(id) {
-        console.log(id);
         this.repos = this.repos.map(repo => {
            if (repo.id === id) {
             delete repo.isFavorites
@@ -27,7 +29,6 @@ class SearchRepos {
         this.repos = this.repos.map(repo => {
             if (repo.id === id) {
               repo =  {...repo, isFavorites: !repo.isFavorites}
-              console.log(repo.isFavorites);
               return repo;
           } else { return repo} })
     }
@@ -35,23 +36,29 @@ class SearchRepos {
     fetchListOfRepo(query) {
 
                 if (query) {
+                    if (cache.has(query)) {
+                        return null
+                    } else {
+                        fetch(`${url}?q=${query}`, {
+                            method: 'GET',
+                            headers: {
+                                'Accept': 'application/vnd.github.v3+json',
+                                'Authorization': `token ${token}`,
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(json => {
+                            json.items = json.items.map(item => {
+                                item = {...item, isFavorites: false}
+                                return item
+                            })
+                            this.repos = [...json.items] 
+        
+                        })
 
-                fetch(`${url}?q=${query}`, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/vnd.github.v3+json',
-                        'Authorization': 'token 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',
+                        cache.set(query, query);
                     }
-                })
-                .then(response => response.json())
-                .then(json => {
-                    json.items = json.items.map(item => {
-                        item = {...item, isFavorites: false}
-                        return item
-                    })
-                    this.repos = [...json.items] 
-
-                })
+                
                 }
     }
     

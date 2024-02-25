@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import additionalInfo from "../store/additionalInfo";
-import classes from './ListOfRepo.module.css';
+import classes from './UI/card/ItemRepo.module.css';
 import clAdd from './AddingInfo.module.css';
 
 

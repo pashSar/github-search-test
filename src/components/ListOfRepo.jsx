@@ -3,7 +3,7 @@ import { InputQuerry } from "./UI/InputQuerry";
 import { SearchRepos} from "./SearchRepos";
 import { FavoritesRepo } from './FavoritesRepo';
 import { ProgressBar } from './progress/ProgressBar';
-import BtnCopy from './UI/BtnCopy';
+import BtnCopy from './UI/buttons/BtnCopy';
 
 
 const ListOfRepo = () => {

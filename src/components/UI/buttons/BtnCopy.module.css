@@ -1,0 +1,48 @@
+.btnOutline {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: rgb(121, 0, 241);
+    background-color: white;
+    border: 1px solid rgb(121, 0, 241);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btnOutline:hover {
+    color:  rgb(160, 87, 233);
+    background-color: white;
+    border: 1px solid rgb(160, 87, 233);
+}
+
+
+.btnOutline:disabled {
+    color: rgb(161, 161, 161);
+    border: 1px solid rgb(161, 161, 161);
+}
+
+.btnColor{
+
+}
+
+.btnFlat {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(121, 0, 241);
+    border: 1px solid rgb(121, 0, 241);
+    font-size: 1rem;
+}
+
+
+.btnFlat:hover {
+    color: white;
+    background-color: rgb(90, 0, 180);
+    border: 1px solid rgb(121, 0, 241);
+}
+
+.btnFlat:disabled {
+    background-color: rgb(161, 161, 161);
+    color: white;
+}

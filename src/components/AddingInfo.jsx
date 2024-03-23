@@ -8,7 +8,7 @@ const AddingInfo = observer (() => {
 
     const item = additionalInfo.detailItem;
 
-
+// here are some changes
     let webSite = '';
     if(!item.homepage) {webSite = ' ---нет---'} else {
         webSite = item.homepage;

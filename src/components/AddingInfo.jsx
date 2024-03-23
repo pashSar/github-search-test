@@ -8,7 +8,7 @@ const AddingInfo = observer (() => {
 
     const item = additionalInfo.detailItem;
 
-// changes in master branch
+// changes in remote/master branch
 
     let webSite = '';
     if(!item.homepage) {webSite = ' ---нет---'} else {

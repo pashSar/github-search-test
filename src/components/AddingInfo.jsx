@@ -9,6 +9,7 @@ const AddingInfo = observer (() => {
     const item = additionalInfo.detailItem;
 //changes in master branch gitHub
 // changes in master branch
+// changes in branch claim-000001
     let webSite = '';
     if(!item.homepage) {webSite = ' ---нет---'} else {
         webSite = item.homepage;

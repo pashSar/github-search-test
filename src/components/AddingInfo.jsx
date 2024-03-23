@@ -7,7 +7,7 @@ import clAdd from './AddingInfo.module.css';
 const AddingInfo = observer (() => {
 
     const item = additionalInfo.detailItem;
-
+//changes in master branch gitHub
 // changes in master branch
     let webSite = '';
     if(!item.homepage) {webSite = ' ---нет---'} else {

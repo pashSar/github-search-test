@@ -15,7 +15,7 @@ const AddingInfo = observer (() => {
         webSite = item.homepage;
     }
 
-
+// changes in gitHub
 
     return (
         <article className={clAdd.wrapper}>
